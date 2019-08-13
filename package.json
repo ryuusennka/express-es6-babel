@@ -1,0 +1,28 @@
+{
+  "name": "es6-express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec babel-node -- server/server.js",
+    "build": "rm -rf ./buildServer && babel -d ./buildServer ./server -s",
+    "prestart": "yarn run build",
+    "start": "node ./buildServer/server.js",
+    "help": "babel --help"
+  },
+  "dependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.5"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2"
+  }
+}
